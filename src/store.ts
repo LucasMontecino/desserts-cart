@@ -1,11 +1,11 @@
 import { reactive } from "vue";
 import data from "../data.json";
-import type { Dessert, CartDessert } from "./types";
+import type { IStore } from "./types";
 
-export const store = reactive<{ dessert: Dessert[]; cart: CartDessert[] }>({
+export const store = reactive<IStore>({
   dessert: data,
   cart: [],
-  addItemToCart(dessert: Dessert) {
+  addItemToCart(dessert) {
     let cpyCart = [...this.cart];
 
     const findItem = cpyCart.find((c) => c.name === dessert.name);
@@ -21,12 +21,12 @@ export const store = reactive<{ dessert: Dessert[]; cart: CartDessert[] }>({
     this.cart = cpyCart;
   },
 
-  removeItemFromCart(dessert: Dessert) {
+  removeItemFromCart(dessert) {
     let cpyCart = [...this.cart];
 
     const findItem = cpyCart.find((c) => c.name === dessert.name);
 
-    if (findItem.quantity > 1) {
+    if (findItem && findItem.quantity > 1) {
       cpyCart = cpyCart.map((c) =>
         c.name === dessert.name ? { ...c, quantity: c.quantity - 1 } : c
       );

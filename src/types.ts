@@ -13,3 +13,10 @@ export interface Dessert {
 export interface CartDessert extends Dessert {
   quantity: number;
 }
+
+export interface IStore {
+  dessert: Dessert[];
+  cart: CartDessert[];
+  addItemToCart: (dessert: Dessert) => void;
+  removeItemFromCart: (dessert: Dessert) => void;
+}

@@ -4,8 +4,14 @@ import IconAddToCart from "../../assets/images/icon-add-to-cart.svg";
 import IncrementQuantity from "../../assets/images/icon-increment-quantity.svg";
 import DecrementQuantity from "../../assets/images/icon-decrement-quantity.svg";
 import { store } from "../../store.ts";
+import { computed } from "vue";
 
 const { item } = defineProps<{ item: Dessert }>();
+
+const cartItemQuantity = computed(() => {
+  const cartItem = store.cart.find((i) => i.name === item.name);
+  return cartItem ? cartItem.quantity : 0;
+});
 </script>
 
 <template>
@@ -21,7 +27,7 @@ const { item } = defineProps<{ item: Dessert }>();
       </button>
       <button v-else class="card__btn card__btn--active">
         <img :src="DecrementQuantity" @click="store.removeItemFromCart(item)" />
-        {{ store.cart.find((i) => i.name === item.name).quantity }}
+        {{ cartItemQuantity }}
         <img :src="IncrementQuantity" @click="store.addItemToCart(item)" />
       </button>
     </div>

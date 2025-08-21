@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import HeaderComponent from "./components/HeaderComponent.vue";
 import ListItems from "./components/ListItems/ListItems.vue";
-import CartComponent from "./components/CartComponent.vue";
+import CartComponent from "./components/Cart/CartComponent.vue";
 </script>
 
 <template>
