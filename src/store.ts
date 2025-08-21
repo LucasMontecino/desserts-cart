@@ -36,4 +36,12 @@ export const store = reactive<IStore>({
 
     this.cart = cpyCart;
   },
+
+  removeItem(dessert) {
+    let cpyCart = [...this.cart];
+
+    cpyCart = cpyCart.filter((item) => item.name !== dessert.name);
+
+    this.cart = cpyCart;
+  },
 });

@@ -19,4 +19,5 @@ export interface IStore {
   cart: CartDessert[];
   addItemToCart: (dessert: Dessert) => void;
   removeItemFromCart: (dessert: Dessert) => void;
+  removeItem: (dessert: Dessert) => void;
 }

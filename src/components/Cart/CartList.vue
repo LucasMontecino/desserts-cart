@@ -8,3 +8,9 @@ import { store } from "../../store.ts";
     <CartItem v-for="item in store.cart" :key="item.name" :item="item" />
   </ul>
 </template>
+
+<style scope>
+.cart__list {
+  margin-top: 1.25rem;
+}
+</style>
