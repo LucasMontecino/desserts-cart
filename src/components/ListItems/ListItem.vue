@@ -8,16 +8,21 @@ import { computed } from "vue";
 
 const { item } = defineProps<{ item: Dessert }>();
 
-const cartItemQuantity = computed(() => {
+const cartCurrentItem = computed(() => {
   const cartItem = store.cart.find((i) => i.name === item.name);
-  return cartItem ? cartItem.quantity : 0;
+  return cartItem ? cartItem : null;
 });
 </script>
 
 <template>
   <div class="card">
     <div class="card__img-content">
-      <img :src="item.image.mobile" :alt="item.name" class="card__img" />
+      <img
+        :src="item.image.mobile"
+        :alt="item.name"
+        class="card__img"
+        :class="{ 'card-selected': cartCurrentItem }"
+      />
       <button
         v-if="store.cart.findIndex((i) => i.name === item.name) === -1"
         class="card__btn"
@@ -27,7 +32,7 @@ const cartItemQuantity = computed(() => {
       </button>
       <button v-else class="card__btn card__btn--active">
         <img :src="DecrementQuantity" @click="store.removeItemFromCart(item)" />
-        {{ cartItemQuantity }}
+        {{ cartCurrentItem?.quantity }}
         <img :src="IncrementQuantity" @click="store.addItemToCart(item)" />
       </button>
     </div>
@@ -75,6 +80,10 @@ const cartItemQuantity = computed(() => {
 
 .card__img {
   border-radius: 0.5rem;
+}
+
+.card-selected {
+  border: 3px solid var(--red);
 }
 
 .card__main {

@@ -7,7 +7,20 @@ import CartComponent from "./components/Cart/CartComponent.vue";
 <template>
   <div class="container">
     <HeaderComponent title="Desserts" />
-    <ListItems />
-    <CartComponent />
+    <div class="row">
+      <ListItems />
+      <CartComponent />
+    </div>
   </div>
 </template>
+
+<style scoped>
+@media (min-width: 1440px) {
+  .row {
+    display: flex;
+    align-items: flex-start;
+
+    gap: 1rem;
+  }
+}
+</style>
