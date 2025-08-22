@@ -12,5 +12,21 @@ import ListItem from "./ListItem.vue";
 <style scoped>
 .list-items {
   margin-top: 2rem;
+
+  display: grid;
+}
+
+@media (min-width: 720px) {
+  .list-items {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+}
+
+@media (min-width: 1440px) {
+  .list-items {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
 }
 </style>
