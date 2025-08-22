@@ -5,6 +5,7 @@ import IncrementQuantity from "../../assets/images/icon-increment-quantity.svg";
 import DecrementQuantity from "../../assets/images/icon-decrement-quantity.svg";
 import { store } from "../../store.ts";
 import { computed } from "vue";
+import { getImageUrl } from "../../utils/imageMapping";
 
 const { item } = defineProps<{ item: Dessert }>();
 
@@ -18,7 +19,7 @@ const cartCurrentItem = computed(() => {
   <div class="card">
     <div class="card__img-content">
       <img
-        :src="item.image.mobile"
+        :src="getImageUrl(item.image.mobile)"
         :alt="item.name"
         class="card__img"
         :class="{ 'card-selected': cartCurrentItem }"
