@@ -28,7 +28,7 @@ import { store } from "../../store.ts";
   border-radius: 0.5rem;
 }
 
-@media (min-width: 1440px) {
+@media (min-width: 700px) {
   .cart {
     width: 50%;
   }

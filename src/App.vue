@@ -17,7 +17,7 @@ import ModalComponent from "./components/Modal/ModalComponent.vue";
 </template>
 
 <style scoped>
-@media (min-width: 1440px) {
+@media (min-width: 700px) {
   .row {
     display: flex;
     align-items: flex-start;
