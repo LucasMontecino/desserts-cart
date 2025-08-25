@@ -44,4 +44,11 @@ export const store = reactive<IStore>({
 
     this.cart = cpyCart;
   },
+  showModal: false,
+  setShowModal() {
+    this.showModal = !this.showModal;
+  },
+  resetCart() {
+    this.cart = [];
+  },
 });

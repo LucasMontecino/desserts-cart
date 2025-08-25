@@ -2,6 +2,7 @@
 import HeaderComponent from "./components/HeaderComponent.vue";
 import ListItems from "./components/ListItems/ListItems.vue";
 import CartComponent from "./components/Cart/CartComponent.vue";
+import ModalComponent from "./components/Modal/ModalComponent.vue";
 </script>
 
 <template>
@@ -12,6 +13,7 @@ import CartComponent from "./components/Cart/CartComponent.vue";
       <CartComponent />
     </div>
   </div>
+  <ModalComponent />
 </template>
 
 <style scoped>

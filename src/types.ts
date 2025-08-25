@@ -20,4 +20,7 @@ export interface IStore {
   addItemToCart: (dessert: Dessert) => void;
   removeItemFromCart: (dessert: Dessert) => void;
   removeItem: (dessert: Dessert) => void;
+  showModal: boolean;
+  setShowModal: () => void;
+  resetCart: () => void;
 }

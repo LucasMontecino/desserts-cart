@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import IconCarbon from "../../assets/images/icon-carbon-neutral.svg";
+import { store } from "@/store.ts";
 </script>
 
 <template>
@@ -8,7 +9,7 @@ import IconCarbon from "../../assets/images/icon-carbon-neutral.svg";
       <img :src="IconCarbon" />
       <p>This is a <span>carbon-neutral</span> delivery</p>
     </div>
-    <button class="cart__footer-btn">Confirm Order</button>
+    <button class="cart__footer-btn" @click="store.setShowModal()">Confirm Order</button>
   </div>
 </template>
 

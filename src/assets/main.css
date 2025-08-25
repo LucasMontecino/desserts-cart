@@ -27,6 +27,7 @@ ul {
 }
 
 ul {
+  list-style-type: none;
   padding: 0;
 }
 
@@ -39,11 +40,21 @@ button {
   cursor: pointer;
 }
 
+html,
+body,
+#app,
+.container {
+  height: 100dvh;
+}
+
+#app {
+  position: relative;
+}
+
 body {
   font-family: "Red Hat Text", sans-serif;
   font-size: 16px;
   color: var(--text-primary);
-  min-height: 100dvh;
   background-color: var(--rose-100);
 }
 
